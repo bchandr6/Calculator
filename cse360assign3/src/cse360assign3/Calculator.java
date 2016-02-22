@@ -12,6 +12,7 @@ package cse360assign3;
  */
 
 public class Calculator {
+	private String history;
 	private int sum;
 	/**
 	 * creates a calculator object with all the class
@@ -20,6 +21,7 @@ public class Calculator {
 	 */	
 	public Calculator () {
 		sum = 0;
+		history = "0";
 	}
 	
 	/**
@@ -38,6 +40,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		sum += value;
+		history = history + " + " + String.valueOf(value);
 	}
 	
 	/**
@@ -47,6 +50,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		sum -= value;
+		history = history + " - " + String.valueOf(value);
 	}
 	
 	/**
@@ -57,6 +61,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		sum = sum * value;
+		history = history + " * " + String.valueOf(value);
 	}
 	
 	/**
@@ -69,6 +74,7 @@ public class Calculator {
 			sum = sum / (int)value;
 		else
 			sum = 0;
+		history = history + " / " + String.valueOf(value);
 	}
 	
 	/**
@@ -77,6 +83,6 @@ public class Calculator {
 	 * @return String this string contains history of operations
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
