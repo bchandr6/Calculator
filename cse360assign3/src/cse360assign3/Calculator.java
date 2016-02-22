@@ -12,13 +12,14 @@ package cse360assign3;
  */
 
 public class Calculator {
-	
+	private int sum;
 	/**
 	 * creates a calculator object with all the class
 	 * variable initialized
 	 * 
 	 */	
 	public Calculator () {
+		sum = 0;
 	}
 	
 	/**
@@ -27,7 +28,7 @@ public class Calculator {
 	 * @return int Result of the calculation done
 	 */
 	public int getTotal () {
-		return 0;
+		return sum;
 	}
 	
 	/**
@@ -36,7 +37,7 @@ public class Calculator {
 	 * @param value the value that is to be added
 	 */
 	public void add (int value) {
-		
+		sum += value;
 	}
 	
 	/**
@@ -45,7 +46,7 @@ public class Calculator {
 	 * @param value the value value to be subtracted
 	 */
 	public void subtract (int value) {
-		
+		sum -= value;
 	}
 	
 	/**
@@ -55,7 +56,7 @@ public class Calculator {
 	 * @param value the value that is to be multiplied
 	 */
 	public void multiply (int value) {
-		
+		sum = sum * value;
 	}
 	
 	/**
@@ -64,7 +65,10 @@ public class Calculator {
 	 * @param value the value used as a divisor
 	 */
 	public void divide (int value) {
-		
+		if(value != 0)
+			sum = sum / (int)value;
+		else
+			sum = 0;
 	}
 	
 	/**
